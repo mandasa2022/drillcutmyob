@@ -19,7 +19,7 @@
         "php": "^7.3|^8.0",
         "illuminate/support": "^8.0|^9.0",
         "illuminate/database": "^8.0|^9.0",
-        "nesbot/carbon": "^1.26.3",
+        "nesbot/carbon": "^2.58",
         "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
