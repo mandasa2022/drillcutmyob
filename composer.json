@@ -1,17 +1,17 @@
 {
-    "name": "creativecurtis/laramyob",
+    "name": "mandasa2022/drillcutmyob",
     "description": "A Laravel wrapper for MYOB Account Right v2",
     "keywords": [
-        "creativecurtis",
-        "laramyob"
+        "mandasa2022",
+        "drillcutmyob"
     ],
-    "homepage": "https://github.com/creativecurtis/laramyob",
+    "homepage": "https://github.com/mandasa2022/drillcutmyob",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "Luke Curtis",
-            "email": "lukesimoncurtis@gmail.com",
+            "name": "Drillcut",
+            "email": "drillcutdevelop@gmail.com",
             "role": "Developer"
         }
     ],
