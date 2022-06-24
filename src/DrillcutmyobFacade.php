@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Mandasa\Drillcutmyob\Skeleton\SkeletonClass
  */
-class LaramyobFacade extends Facade
+class DrillcutmyobFacade extends Facade
 {
     /**
      * Get the registered name of the component.

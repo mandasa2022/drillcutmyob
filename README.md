@@ -1,4 +1,4 @@
-# Laramyob - MYOB in Laravel, made easy.
+# Drillcutmyob - MYOB in Laravel, made easy.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mandasa2022/drillcutmyob.svg?style=flat-square)](https://packagist.org/packages/mandasa2022/drillcutmyob)
 [![Build Status](https://img.shields.io/travis/mandasa2022/drillcutmyob/master.svg?style=flat-square)](https://travis-ci.org/mandasa2022/drillcutmyob)
@@ -28,18 +28,18 @@ MYOB_SCOPE=CompanyFile
 
 Publish the preset configuration to store your MYOB authentication details
 ```bash
-php artisan vendor:publish --provider="Mandasa\Drillcutmyob\LaramyobServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Mandasa\Drillcutmyob\DrillcutmyobServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
 You'll now need to authenticate with something like the following:
 
 ``` php
-use Mandasa\Drillcutmyob\Laramyob;
+use Mandasa\Drillcutmyob\Drillcutmyob;
 use Mandasa\Drillcutmyob\Models\Remote\CompanyFile;
 use Mandasa\Drillcutmyob\Models\Remote\Contact\Customer;
 
-$drillcutmyob = new Laramyob;
+$drillcutmyob = new Drillcutmyob;
 //Redirect your user to MYOB to authenticate account right v2
 $drillcutmyob->authenticate()->getCode();
 //When the code is returned, get your access token
@@ -47,13 +47,13 @@ $drillcutmyob->authenticate()->getToken();
 //Now you can save your credentials like so
 //You would first load the company files the MYOB user has access to
 $drillcutmyob->of(CompanyFile::class)->load();
-//Then save them like so (the username and passwords are Base64 encoded in Laramyob)
+//Then save them like so (the username and passwords are Base64 encoded in Drillcutmyob)
 $drillcutmyob->authenticate()->saveCompanyFileCredentials([
-        'username' => 'Administrator',
-        'password' => '',
-        'company_file_guid' => '8bf1611b-1666-4f8f-8b7f-ee4cf4fee2ff',
-        'company_file_name' => 'API Sandbox Demo 48',
-        'company_file_uri'  => 'https:\/\/ar1.api.myob.com\/accountright\/8bf1611b-1666-4f8f-8b7f-ee4cf4fee2ff'
+        'username' => 'USERNAME',
+        'password' => 'PASSWORD',
+        'company_file_guid' => 'COMPANY_FILE_GUID',
+        'company_file_name' => 'COMPANY_FILE_NAME',
+        'company_file_uri'  => 'COMPANY_FILE_URI''
 ]);
 ```
 
@@ -92,9 +92,9 @@ Once you're ready to post you can do the following, to, for example, save a Cust
 $taxCode = $this->drillcutmyob->of(TaxCode::class)->whereCode('GST')->first();
 
 $customer = (new Customer)->create([
-    'CompanyName'    => 'Creativecurtis',
-    'LastName'       => 'curtis',
-    'FirstName'      => 'luke',
+    'CompanyName'    => 'Drillcut',
+    'LastName'       => 'Phillips',
+    'FirstName'      => 'Tim',
     'IsIndividual'   => false,
     "TaxCode"        => [
         "UID" => $taxCode['UID'],

@@ -9,7 +9,7 @@ use Mandasa\Drillcutmyob\Request\MyobRequest;
 use Mandasa\Drillcutmyob\Authentication\MyobAuthenticate;
 use Mandasa\Drillcutmyob\Models\Configuration\MyobConfiguration;
 
-class Laramyob
+class Drillcutmyob
 {
     public $authenticate; 
     public $myobRequest;

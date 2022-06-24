@@ -5,7 +5,7 @@ namespace Mandasa\Drillcutmyob;
 use Illuminate\Support\ServiceProvider;
 use Mandasa\Drillcutmyob\Models\Remote\Contact\Customer;
 
-class LaramyobServiceProvider extends ServiceProvider
+class DrillcutmyobServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -57,7 +57,7 @@ class LaramyobServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('laramyob', function () {
-            return new Laramyob;
+            return new Drillcutmyob;
         });
     }
 }
