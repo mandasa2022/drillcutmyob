@@ -69,14 +69,14 @@ $drillcutmyob->of(Customer::class)->page(1); //page 1
 $drillcutmyob->of(Customer::class)->load(); //page 1
 $drillcutmyob->of(Customer::class)->load(2); //page 2
 
-//You can also load the specified model by UID
-$drillcutmyob->of(Customer::class)->loadByUid('8bf1611b-1666-4f8f-8b7f-ee4cf4fee2ff');
+//You can also load the specified model by UID .. here replace UID with your customer UID
+$drillcutmyob->of(Customer::class)->loadByUid('UID');
 
 //Or just return the first from a search
 $drillcutmyob->of(TaxCode::class)->whereCode('GST')->first();
 
 //The customer class also has some helper function (whereEmail)
-$drillcutmyob->of(Customer::class)->whereEmail('lukesimoncurtis@gmail.com')->get();
+$drillcutmyob->of(Customer::class)->whereEmail('drillcutmyob@gmail.com')->get();
 ```
 
 You can also expose the Raw API for MYOB if appropriate
